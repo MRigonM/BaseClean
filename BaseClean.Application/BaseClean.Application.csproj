@@ -9,7 +9,10 @@
     <ItemGroup>
       <ProjectReference Include="..\BaseClean.Domain\BaseClean.Domain.csproj" />
       <ProjectReference Include="..\BaseClean.Infrastructure\BaseClean.Infrastructure.csproj" />
-      <ProjectReference Include="..\BaseClean.Web\BaseClean.Web.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="16.2.0" />
     </ItemGroup>
 
 </Project>

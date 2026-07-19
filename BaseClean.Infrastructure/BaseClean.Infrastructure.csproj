@@ -8,7 +8,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\BaseClean.Domain\BaseClean.Domain.csproj" />
-      <ProjectReference Include="..\BaseClean.Web\BaseClean.Web.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.10" />
     </ItemGroup>
 
 </Project>

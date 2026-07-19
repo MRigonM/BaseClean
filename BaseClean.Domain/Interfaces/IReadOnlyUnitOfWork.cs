@@ -1,6 +1,6 @@
 ﻿namespace BaseClean.Domain.Interfaces;
 
-public class Class1
+public interface IReadOnlyUnitOfWork
 {
     
 }
