@@ -1,5 +1,8 @@
-﻿using BaseClean.Domain.Entities;
+﻿using BaseClean.Domain.Audit;
+using BaseClean.Domain.Entities;
 using BaseClean.Infrastructure.Data;
+using BaseClean.Web.Auditing;
+using BaseClean.Web.Filters;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +33,12 @@ public static class ApplicationServices
         services.AddDataProtection();
         
         //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies(MappingProfiles));
+        
+        //Audit 
+        services.AddTransient<AuditAttribute>();
+        services.AddSingleton<AuditQueue>();
+        services.AddSingleton<SensitiveDataRedactor>();
+        services.AddHostedService<AuditWriterService>();
         
         return services;
     }

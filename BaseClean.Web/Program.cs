@@ -1,8 +1,9 @@
 using BaseClean.Web.Extensions;
+using BaseClean.Web.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(o => o.Filters.Add<AuditAttribute>());
 
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddJwtAuthentication(builder.Configuration);
